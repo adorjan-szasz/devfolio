@@ -1,0 +1,7 @@
+[{
+  "title": "Devfolio",
+  "description": "A personal portfolio built to showcase my web development skills, projects, and experiences. This dynamic and responsive site uses modern web technologies to offer an engaging user experience. Features include a dark mode toggle, smooth scrolling, project grids and animated transitions.",
+  "image": "assets/projects/devfolio.png",
+  "tags": ["HTML", "CSS", "JavaScript", "TailwindCSS", "GitHub Pages", "Responsive Design", "Dark Mode"]
+}
+]

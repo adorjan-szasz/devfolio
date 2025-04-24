@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en" id="htmlRoot" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta SEO -->
+    <meta name="description" content="A personal portfolio showcasing web dev projects.">
+    <meta name="keywords" content="developer, portfolio, Laravel, Symfony, Python, Vue, projects, GitHub">
+    <meta name="author" content="Adorjan Szasz">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="My Developer Portfolio">
+    <meta property="og:description" content="Explore real-world projects from backend to frontend.">
+<!--    <meta property="og:url" content="https://yourdomain.com">-->
+    <meta property="og:type" content="website">
+
+    <link id="favicon" rel="icon" type="image/png" href="assets/logo.png">
+
+    <title>Devfolio – Adorján Szász</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config =
+            {
+                darkMode: 'class'
+            }
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+
+    <header id="siteHeader" class="fixed w-full top-0 left-0 z-50 flex justify-between items-center px-6 h-24
+    transition-all duration-300 backdrop-blur bg-white/70 dark:bg-gray-900/70 text-black dark:text-white shadow-md"
+    >
+        <a href="/" class="h-full flex items-center">
+            <img id="logo" src="assets/logo-light.png" alt="Logo" class="max-h-full transition-all duration-300">
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-6 font-semibold">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#projects" class="hover:underline">Projects</a>
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#tech-stack" class="hover:underline">Tech Stack</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+
+            <button id="themeToggle" class="flex items-center justify-center w-10 h-10">
+                <i id="sunIcon" class="fas fa-sun"></i>
+                <i id="moonIcon" class="fas fa-moon"></i>
+            </button>
+        </nav>
+
+        <!-- Hamburger -->
+        <button id="menuToggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10">
+            <div class="bar w-6 h-0.5 bg-current mb-1 transition-all"></div>
+            <div class="bar w-6 h-0.5 bg-current mb-1 transition-all"></div>
+            <div class="bar w-6 h-0.5 bg-current transition-all"></div>
+        </button>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="fixed top-24 left-0 w-full bg-white dark:bg-gray-900 text-center hidden
+    opacity-0 pointer-events-none transition-all duration-300 z-40"
+    >
+        <a href="#home" class="block py-3 border-b border-gray-200 dark:border-gray-700">Home</a>
+        <a href="#projects" class="block py-3 border-b border-gray-200 dark:border-gray-700">Projects</a>
+        <a href="#about" class="block py-3 border-b border-gray-200 dark:border-gray-700">About</a>
+        <a href="#tech-stack" class="block py-3 border-b border-gray-200 dark:border-gray-700">Tech Stack</a>
+        <a href="#contact" class="block py-3">Contact</a>
+
+        <button id="mobileThemeToggle" class="w-full py-3 border-t border-gray-200 dark:border-gray-700 text-xl">
+            <i id="mobileThemeIcon" class="fas fa-sun"></i>
+        </button>
+    </div>
+
+    <main class="pt-28 px-4 md:px-6 lg:px-12">
+        <div id="preloader"><div class="loader"></div></div>
+
+        <section id="home" data-aos="fade-up" class="text-center mt-32">
+            <h1 class="text-6xl font-bold mb-12">
+                Welcome to my portfolio
+            </h1>
+            <h1 class="text-4xl">
+                My name is Adorján Szász, I'm a creative senior web developer crafting smart apps and tools.
+            </h1>
+        </section>
+
+        <section id="projects" data-aos="fade-up" class="mt-56">
+            <h2 class="text-4xl text-center font-semibold mb-16">
+                Projects
+            </h2>
+            <div id="projectGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"></div>
+        </section>
+
+        <section id="about" data-aos="fade-up" class="text-center mt-56">
+            <h2 class="text-4xl font-semibold mb-6">
+                About Me
+            </h2>
+
+            <div class="flex flex-col items-center space-y-6 text-center">
+                <!-- Avatar Image -->
+                <img src="assets/avatar.png" alt="My Avatar" class="w-32 h-32 rounded-full border-4 border-gray-300
+                dark:border-gray-700 shadow-lg transition-all transform hover:scale-105 hover:border-indigo-400 mb-4"
+                >
+            </div>
+
+            <h1 class="text-2xl font-bold mb-8">
+                I'm a Full-stack Web Developer who loves building creative, useful, and secure software with elegant UX and
+                scalable backends. My name is Adorján Szász, and I have been a web developer since 2018. Over the years,
+                I have worked on various projects, maintaining and developing new features for websites, as well as fixing
+                bugs and writing tests for my code.
+            </h1>
+
+            <h1 class="text-2xl font-bold mb-6">
+                Since my first day on the job, I have worked on PHP projects using either the Symfony or Laravel frameworks.
+                Writing SQL queries is second nature to me, and in the past three years, I have also gained experience with
+                Vue.js. I am remarkably receptive to new ideas, that I love challenges and that I am capable of  working
+                effectively both in team and on my own. I have a peaceful and calm personality, I love to observe and pay
+                attention to every little vibration around me, and however the biggest part of my life is occupied and
+                ruled by informatics and art, I love to do sports and hiking.
+            </h1>
+
+            <div class="mt-4">
+                <a href="#projects" class="inline-block bg-indigo-700 text-white px-6 py-3 rounded-2xl text-lg
+                hover:bg-indigo-800 transition-all"
+                >
+                    Explore My Projects
+                </a>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="max-w-4xl mx-auto my-16 px-4 mt-56" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-16 text-center text-gray-900 dark:text-white">
+                Tech Stack
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm md:text-base">
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-5 shadow hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2 text-indigo-600 dark:text-indigo-400">
+                        Backend
+                    </h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li>PHP (Laravel, Symfony)</li>
+                        <li>MySQL</li>
+                        <li>Doctrine, Eloquent</li>
+                        <li>Python (beginner)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-5 shadow hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2 text-indigo-600 dark:text-indigo-400">
+                        Frontend
+                    </h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li>HTML, CSS, JS</li>
+                        <li>Vue.js</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-5 shadow hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2 text-indigo-600 dark:text-indigo-400">
+                        Tools & Other
+                    </h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li>Docker (medium)</li>
+                        <li>Elasticsearch (medium)</li>
+                        <li>Mostly Linux OS user</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" data-aos="fade-up" class="text-center mt-56">
+            <h2 class="text-4xl font-semibold mb-12">
+                Contact
+            </h2>
+
+            <p>Email:
+                <a href="mailto:szszadorjn@yahoo.com" class="text-blue-500 hover:underline">
+                    szszadorjn@yahoo.com
+                </a>
+            </p>
+
+            <p>LinkedIn:
+                <a target="_blank" href="https://linkedin.com/in/szasz-adorjan-b0b32933" class="text-blue-500 hover:underline">
+                    Adorján Szász
+                </a>
+            </p>
+        </section>
+</main>
+
+<footer class="text-center p-4 mt-12 bg-gray-100 dark:bg-gray-800">
+    © 2025 Adorján Szász
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration: 800,
+        offset: 100,
+        once: true
+    });
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
