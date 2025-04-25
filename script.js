@@ -11,30 +11,6 @@ if (mobileThemeToggle) {
     });
 }
 
-function setTheme(theme) {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-
-    // Swap icon on Desktop
-    const icon = theme === "dark" ? "fa-sun" : "fa-moon";
-
-    themeToggle.innerHTML = `<i class="fas ${icon}"></i>`;
-
-    applyGlow(themeToggle, theme);
-
-    // Mobile icon: reset and apply correct one
-    if (mobileThemeIcon) {
-        mobileThemeIcon.classList.remove("fa-sun", "fa-moon");
-        mobileThemeIcon.classList.add(icon);
-
-        applyGlow(mobileThemeToggle, theme);
-    }
-
-    // Swap logo
-    logo.src = theme === "dark" ? "assets/logo-dark.png" : "assets/logo-light.png";
-}
-
 themeToggle.addEventListener("click", () => {
     const current = document.documentElement.classList.contains("dark") ? "dark" : "light";
 
@@ -42,9 +18,17 @@ themeToggle.addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme") || "light";
+    setupThemeToggle();
 
-    setTheme(savedTheme);
+    initHeaderOffset();
+});
+
+let resizeTimeout;
+document.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        initHeaderOffset();
+    }, 200);
 });
 
 // Hamburger toggle
@@ -92,6 +76,8 @@ window.addEventListener("scroll", () => {
 
     header.classList.toggle("h-16", window.scrollY > 30);
     header.classList.toggle("h-24", window.scrollY <= 30);
+
+    initHeaderOffset();
 });
 
 // Load projects with animations
@@ -118,7 +104,7 @@ fetch('data/projects.json')
                 githubLink = `
                     <a href="${p.link}" target="_blank" class="mt-4 inline-block text-indigo-600 dark:text-indigo-400 
                     hover:underline font-semibold">
-                        🔗 View on GitHub
+                        View on GitHub
                     </a>
                 `;
             }
@@ -141,6 +127,46 @@ fetch('data/projects.json')
 window.addEventListener("load", () => {
     document.getElementById("preloader").style.display = "none";
 });
+
+function setTheme(theme) {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+
+    // Swap icon on Desktop
+    const icon = theme === "dark" ? "fa-sun" : "fa-moon";
+
+    themeToggle.innerHTML = `<i class="fas ${icon}"></i>`;
+
+    applyGlow(themeToggle, theme);
+
+    // Mobile icon: reset and apply correct one
+    if (mobileThemeIcon) {
+        mobileThemeIcon.classList.remove("fa-sun", "fa-moon");
+        mobileThemeIcon.classList.add(icon);
+
+        applyGlow(mobileThemeToggle, theme);
+    }
+
+    // Swap logo
+    logo.src = theme === "dark" ? "assets/logo-dark.png" : "assets/logo-light.png";
+}
+
+function setupThemeToggle() {
+    const savedTheme = localStorage.getItem("theme") || "light";
+
+    setTheme(savedTheme);
+}
+
+function initHeaderOffset() {
+    const header = document.getElementById("siteHeader");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (header && mobileMenu) {
+        const headerHeight = header.offsetHeight;
+        mobileMenu.style.top = `${headerHeight}px`;
+    }
+}
 
 function applyGlow(el, theme) {
     el.classList.remove("theme-glow-light", "theme-glow-dark");
