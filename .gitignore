@@ -1,1 +1,8 @@
+# Node modules
+node_modules/
+
+# IDE settings
 .idea/
+
+# System files - MacOS
+.DS_Store
