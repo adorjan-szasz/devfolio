@@ -5,7 +5,7 @@ Welcome to my personal portfolio! This is a clean, responsive, and fast static w
 
 ## Live Preview
 
-[View Portfolio](https://github.com/adorjan-szasz/devfolio)
+[View Portfolio](https://adorjan-szasz.github.io/devfolio/)
 
 ## Tech Stack
 
