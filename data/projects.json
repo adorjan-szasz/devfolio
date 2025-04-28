@@ -1,8 +1,16 @@
-[{
-  "title": "Devfolio",
-  "description": "A personal portfolio built to showcase my web development skills, projects, and experiences. This dynamic and responsive site uses modern web technologies to offer an engaging user experience. Features include a dark mode toggle, smooth scrolling, project grids and animated transitions.",
-  "image": "assets/projects/devfolio.png",
-  "tags": ["HTML", "CSS", "JavaScript", "TailwindCSS", "GitHub Pages", "Responsive Design", "Dark Mode"],
-  "link": "https://github.com/adorjan-szasz/devfolio"
-}
+[
+  {
+    "title": "Devfolio",
+    "description": "A personal portfolio built to showcase my web development skills, projects, and experiences. This dynamic and responsive site uses modern web technologies to offer an engaging user experience. Features include a dark mode toggle, smooth scrolling, project grids and animated transitions.",
+    "image": "assets/projects/devfolio.png",
+    "tags": ["HTML", "CSS", "JavaScript", "TailwindCSS", "GitHub Pages", "Responsive Design", "Dark Mode"],
+    "link": "https://github.com/adorjan-szasz/devfolio"
+  },
+  {
+    "title": "Product API",
+    "description": "Laravel REST API for managing products across categories like books, fashion, and music. This project supports dynamic pagination, random data generation for testing. Built with focus on flexibility, performance, and extensibility.",
+    "image": "assets/projects/product_api.png",
+    "tags": ["PHP 8.3", "Laravel 12.3", "MySQL", "Data Seeding", "Pagination", "Best Practices"],
+    "link": "https://github.com/adorjan-szasz/product-api"
+  }
 ]
