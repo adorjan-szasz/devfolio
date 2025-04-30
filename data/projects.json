@@ -7,10 +7,17 @@
     "link": "https://github.com/adorjan-szasz/devfolio"
   },
   {
+    "title": "Vehicle API",
+    "description": "A robust Laravel-based API project for managing different types of vehicles including cars, motorcycles, and trucks. Built with clean architecture principles, it features soft deletes, advanced filtering, dynamic pagination, OpenAPI (Swagger) documentation, and unit testing. Designed with scalability and maintainability in mind.",
+    "image": "assets/projects/vehicle_api_logo.png",
+    "tags": ["PHP 8.3", "Laravel 12.10", "Eloquent", "Swagger", "PHPUnit", "API Resource", "Soft Deletes", "Pagination", "Validation", "Clean Architecture"],
+    "link": "https://github.com/adorjan-szasz/vehicle-api"
+  },
+  {
     "title": "Product API",
     "description": "Laravel REST API for managing products across categories like books, fashion, and music. This project supports dynamic pagination, random data generation for testing. Built with focus on flexibility, performance, and extensibility.",
     "image": "assets/projects/product_api.png",
-    "tags": ["PHP 8.3", "Laravel 12.3", "MySQL", "Data Seeding", "Pagination", "Best Practices"],
+    "tags": ["PHP 8.3", "Laravel 12.3", "Eloquent", "Data Seeding", "Pagination", "Best Practices"],
     "link": "https://github.com/adorjan-szasz/product-api"
   }
 ]
