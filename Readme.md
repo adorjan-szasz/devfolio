@@ -31,3 +31,7 @@ npm install
 
 # Build the CSS
 npm run build
+
+# Locally, I am starting it with a simple HTTP server using Python
+python3 -m http.server
+```

@@ -7,10 +7,17 @@
     "link": "https://github.com/adorjan-szasz/devfolio"
   },
   {
+    "title": "3D Model Viewer",
+    "description": "A clean, lightweight Laravel-based WebGL project to upload, view, and interact with .obj, .mtl, .gltf, .glb, .dae 3D models directly in the browser. Built with clean, extensible code and jQuery for front-end handling, it features zoom, pan, and rotate controls, lighting and shading, persistent camera memory, and Docker support for full portability. Ideal for learning and demonstrating 3D rendering with PHP backend integration.",
+    "image": "assets/projects/laravel_webgl_threejs_logo.png",
+    "tags": ["PHP 8.3", "Laravel 12.12", "WebGL2", "Three.js 0.176.0", "jQuery", "Javascript", "Docker", "3D Viewer", ".OBJ", "Shader", "Camera Controls", "Persistent State", "Lighting", "Obj Loader", "Screenshot"],
+    "link": "https://github.com/adorjan-szasz/webgl-viewer"
+  },
+  {
     "title": "Vehicle API",
     "description": "A robust Laravel-based API project for managing different types of vehicles including cars, motorcycles, and trucks. Built with clean architecture principles, it features soft deletes, advanced filtering, dynamic pagination, OpenAPI (Swagger) documentation, and unit testing. Designed with scalability and maintainability in mind.",
     "image": "assets/projects/vehicle_api_logo.png",
-    "tags": ["PHP 8.3", "Laravel 12.10", "Eloquent", "Swagger", "PHPUnit", "API Resource", "Soft Deletes", "Pagination", "Validation", "Clean Architecture"],
+    "tags": ["PHP 8.3", "Laravel 12.10", "Eloquent", "Swagger", "PHPUnit", "API Resource", "Soft Deletes", "Pagination", "Validation", "Clean Architecture", "Postman"],
     "link": "https://github.com/adorjan-szasz/vehicle-api"
   },
   {
